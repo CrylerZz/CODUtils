@@ -4,7 +4,6 @@ if(localStorage['speedups']){
     let storageSpeedUp = JSON.parse(localStorage['speedups']);
     for (const [key, value] of Object.entries(storageSpeedUp)) {
         for (const [k ,v] of Object.entries(value)) {
-            console.log(`${k}: ${v}`);
             $('#'+k).val(v);
         }
     }
@@ -12,6 +11,7 @@ if(localStorage['speedups']){
     calcTech();
     calcTrain();
     calcBuild();
+
 }else{
     console.log('storageSpeedUp isnt defined')
 }
@@ -39,14 +39,13 @@ saveSpeedup.click(function(){
         }
     })
     localStorage['speedups'] = JSON.stringify(arr);
-    console.log(arr);
+    location.reload();
 })
 
 ////////////////////////////////////////////////////
 ////////////////////// PET
 ////////////////////////////////////////////////////
 
-//console.log(dataPets);
 for (var i = 0; i < dataPets.length; i++){
     var obj = dataPets[i];
     $( "#petsList" ).append(`
@@ -57,3 +56,36 @@ for (var i = 0; i < dataPets.length; i++){
         </div>
     ` );
 }
+
+////////////////////////////////////////////////////
+////////////////////// HEADER
+////////////////////////////////////////////////////
+
+let $header = $('header');
+let $lastScrollTop = 0;
+let $isSticky = $('.is-sticky');
+
+$(document).ready(function () {
+    let isScrolled = $(window).scrollTop();
+    if(isScrolled > $header.height()){
+        setTimeout(function() {
+            $header.addClass('-translate-y-[11.5rem]');
+            $isSticky.removeClass('top-52');
+            $isSticky.addClass('lg:sticky top-16');
+        }, 100);
+    }
+});
+
+$(window).scroll(function () {
+    let st = $(this).scrollTop();
+    if ((st > $lastScrollTop) && ($(this).scrollTop() > $header.height())){
+        $header.addClass('-translate-y-[11.5rem]');
+        $isSticky.removeClass('top-52');
+        $isSticky.addClass('lg:sticky top-16');
+    } else {
+        $header.removeClass('-translate-y-[11.5rem]');
+        $isSticky.removeClass('top-16');
+        $isSticky.addClass('lg:sticky top-52');
+    }
+    $lastScrollTop = st;
+});

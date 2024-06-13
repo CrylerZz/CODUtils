@@ -6,5 +6,5 @@ html, body{
 
 }
 *{
-    @apply tracking-wider;
+    @apply tracking-wider duration-150;
 }
