@@ -19,20 +19,10 @@
             <div class="text-left">
                 <p class="text-base text-teal-300">Fast tool for all beautiful ppl! 🎉</p>
             </div>
-            <div class="text-teal-300 border-2 border-teal-300 hover:bg-teal-300 cursor-pointer hover:text-black h-10 px-4 flex items-center justify-center rounded-lg">SpeedUp</div>
-
-          <!--  <div class=" flex flex-col gap-4">
-                <div class="rounded-lg p-4 text-sm font-medium text-white relative transition
-                aspect-square group hover:cursor-pointer
-                flex items-center justify-center flex-col gap-1
-                *:h-1 *:bg-white *:w-6 *:rounded *:duration-75
-                 hover:bg-indigo-700 focus:outline-none focus:ring">
-                    <div class=" group-hover:w-2"></div>
-                    <div class=""></div>
-                    <div class=" group-hover:w-4"></div>
-                </div>
+            <div class="flex items-center justify-center gap-4">
+                <div onclick="showSectionTab('speedup')" class="text-teal-300 border-2 border-teal-300 hover:bg-teal-300 cursor-pointer hover:text-black h-10 px-4 flex items-center justify-center rounded-lg">SpeedUp</div>
+                <!--<div onclick="showSectionTab('pets')" class="text-teal-300 border-2 border-teal-300 hover:bg-teal-300 cursor-pointer hover:text-black h-10 px-4 flex items-center justify-center rounded-lg">Pets</div>-->
             </div>
--->
         </div>
     </div>
 
@@ -40,17 +30,34 @@
 
 <main class="min-h-screen">
 
-    <section id="speedup" class=" max-w-screen-xl mx-auto px-4 py-8 sm:py-12 space-y-10">
+    <section id="speedup" class="sectionTab max-w-screen-xl mx-auto px-4 py-8 sm:py-12 space-y-10">
         <div class="flex items-center justify-between">
             <h2 class="text-white text-4xl uppercase font-extrabold text-center ">SpeedUp Calculator</h2>
+
+
             <div id="save-speedup" class="h-12 w-12 flex items-center justify-center bg-green-600 hover:bg-green-700 cursor-pointer  rounded-lg">
                 <svg class="fill-white h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+            </div>
+        </div>
+        <div class="flex items-center justify-between gap-4 text-white">
+            <div class="bg-green-600 p-6 rounded-xl overflow-hidden w-full flex items-center justify-between">
+                <span class="font-extrabold uppercase">Generic</span>
+                <span id="genericResult"></span>
+            </div>
+            <div class="bg-blue-600 p-6 rounded-xl overflow-hidden w-full flex items-center justify-between">
+                
+                <span class="font-extrabold uppercase">Tech</span>
+
+                <span id="techResult"></span>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-xl overflow-hidden w-full flex items-center justify-between">
+                <span class="font-extrabold uppercase">Training</span>
+                <span  id="trainResult"></span>
             </div>
         </div>
         <details id="generic" open class="localData bg-gray-900 border-2 border-gray-700 rounded-xl overflow-hidden">
             <summary class="flex items-center justify-between w-full text-white uppercase cursor-pointer bg-gray-900 hover:bg-gray-700 p-6 font-medium tracking-widest">
                 <span>Generic</span>
-                <span class="text-left" id="genericResult"></span>
             </summary>
             <div class="bg-gray-800">
                 <div class="p-6 grid lg:grid-cols-4 gap-6">
@@ -77,12 +84,6 @@
                             15 min
                         </label>
                         <input type="number" id="generic-4" data-multiplier="15" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="generic-5" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            20 min
-                        </label>
-                        <input type="number" id="generic-5" data-multiplier="20" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
                     </div>
                     <div>
                         <label for="generic-6" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
@@ -147,7 +148,6 @@
         <details id="tech" open class="localData bg-gray-900 border-2 border-gray-700 rounded-xl overflow-hidden">
             <summary class="flex items-center justify-between w-full text-white uppercase cursor-pointer bg-gray-900 p-6 font-medium tracking-widest">
                 <span>Tech</span>
-                <span class="text-left" id="techResult"></span>
             </summary>
             <div class=" bg-gray-800">
                 <div class="p-6 grid lg:grid-cols-4 gap-6">
@@ -174,12 +174,6 @@
                             15 min
                         </label>
                         <input type="number" id="tech-4" data-multiplier="15" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="tech-5" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            20 min
-                        </label>
-                        <input type="number" id="tech-5" data-multiplier="20" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
                     </div>
                     <div>
                         <label for="tech-6" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
@@ -245,7 +239,6 @@
         <details id="train" open class="localData bg-gray-900 border-2 border-gray-700 rounded-xl overflow-hidden">
             <summary class="flex items-center justify-between w-full text-white uppercase cursor-pointer bg-gray-900 p-6 font-medium tracking-widest">
                 <span>Training</span>
-                <span class="text-left" id="trainResult"></span>
 
             </summary>
             <div class=" bg-gray-800">
@@ -273,12 +266,6 @@
                             15 min
                         </label>
                         <input type="number" id="train-4" data-multiplier="15" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="train-5" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            20 min
-                        </label>
-                        <input type="number" id="train-5" data-multiplier="20" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
                     </div>
                     <div>
                         <label for="train-6" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
@@ -340,189 +327,6 @@
                 </div>-->
             </div>
         </details>
-        <details id="build" open class="localData bg-gray-900 border-2 border-gray-700 rounded-xl overflow-hidden">
-            <summary class="flex items-center justify-between w-full text-white uppercase cursor-pointer bg-gray-900 p-6 font-medium tracking-widest">
-                <span>building</span>
-                <span class="text-left" id="buildResult"></span>
-
-            </summary>
-            <div class=" bg-gray-800">
-                <div class="p-6 grid lg:grid-cols-4 gap-6">
-                    <div>
-                        <label for="build-1"  class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            1 min
-                        </label>
-                        <input type="number" id="build-1" data-multiplier="1" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-2" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            5 min
-                        </label>
-                        <input type="number" id="build-2" data-multiplier="5" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-3" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            10 min
-                        </label>
-                        <input type="number" id="build-3" data-multiplier="10" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-4" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            15 min
-                        </label>
-                        <input type="number" id="build-4" data-multiplier="15" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-5" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            20 min
-                        </label>
-                        <input type="number" id="build-5" data-multiplier="20" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-6" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            30 min
-                        </label>
-                        <input type="number" id="build-6" data-multiplier="30" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-7" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            60 min
-                        </label>
-                        <input type="number" id="build-7" data-multiplier="60" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-8" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            3h
-                        </label>
-                        <input type="number" id="build-8" data-multiplier="180" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-9" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            8h
-                        </label>
-                        <input type="number" id="build-9" data-multiplier="480" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-10" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            15h
-                        </label>
-                        <input type="number" id="build-10" data-multiplier="900" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-11" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            1Day
-                        </label>
-                        <input type="number" id="build-11" data-multiplier="1440" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-12" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            3Day
-                        </label>
-                        <input type="number" id="build-12" data-multiplier="4320" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-13" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            7Day
-                        </label>
-                        <input type="number" id="build-13" data-multiplier="10080" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                    <div>
-                        <label for="build-14" class="block text-xs font-medium text-gray-700 dark:text-gray-200">
-                            30Day
-                        </label>
-                        <input type="number" id="build-14" data-multiplier="43200" placeholder="0" class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"/>
-                    </div>
-                </div>
- <!--               <div class="flex text-white items-center justify-center w-full gap-4 p-6">
-                    <div onclick="calcBuild()" class="grow bg-blue-600 rounded uppercase text-white text-center py-2">Calc</div>
-                </div>-->
-            </div>
-        </details>
-    </section>
-
-    <section id="pets" class="hidden max-w-screen-xl mx-auto px-4 py-8 sm:py-12 space-y-10">
-        <div class="flex items-center justify-between">
-            <h2 class="text-white text-4xl uppercase font-extrabold text-center ">Title ordered</h2>
-        </div>
-
-        <div id="petsList" class="grid md:grid-cols-3 lg:grid-cols-6 gap-10">
-            <!--<div class=""><img src="/img/pet/1.png"/></div>-->
-        </div>
-        <div class="flex items-center justify-between">
-            <h2 class="text-white text-4xl uppercase font-extrabold text-center ">Your List</h2>
-    <!--
-           //TODO : FORCE SAVE
-           <div id="save-pet-skill" class="h-12 w-12 flex items-center justify-center bg-green-600 hover:bg-green-700 cursor-pointer border-2 border-white rounded-lg relative">
-                <svg class=" fill-white h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;!&ndash;!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
-            </div>-->
-        </div>
-        <div class="grid grid-cols-6 gap-10">
-            <div id="pet-1" class="h-52 w-full bg-gray-300 pet-checked flex items-center justify-center relative group">
-                <!--<img class="" src="/img/pet/Sapphire-Faedrake.png"/>-->
-                <!--Btn for config-->
-                <div id="config-pet-1" class="absolute bg-white/40 group hover:bg-blue-500 h-24 w-24 rounded-full group-hover:flex hidden items-center justify-center">
-                    <svg class="h-8 fill-gray-400 group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
-                </div>
-
-                <div class="disband-pet-1 group-hover:flex hidden bg-red-500 hover:bg-red-600 h-10 w-10 rounded-xl  items-center justify-center absolute -top-5 -right-5"><svg class="h-5 fill-white"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></div>
-
-                <div class="bg-gray-900 absolute top-0 left-full w-max flex flex-col">
-                    <div class="closeConfig-pet-1 bg-gray-900 w-10 h-10 flex items-center justify-center absolute -top-10 right-0">
-                        <svg class="h-5 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
-                    </div>
-                    <div class="grid grid-cols-4 gap-4 p-4">
-                        <div class=" h-20 w-20 rounded">
-                            <img src="/img/petSkill/forceful-painbloom.webp" />
-                        </div>
-                        <div class="border-2 border-amber-500 h-20 w-20 rounded flex items-center justify-center">
-                            <svg class="fill-white h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
-                        </div>
-                        <div class="border-2 border-amber-500 h-20 w-20 rounded flex items-center justify-center">
-                            <svg class="fill-white h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
-                        </div>
-                        <div class="border-2 border-amber-500 h-20 w-20 rounded flex items-center justify-center">
-                            <svg class="fill-white h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
-                        </div>
-                        <div class="border-2 border-amber-500 h-20 w-20 rounded flex items-center justify-center">
-                            <svg class="fill-white h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
-                        </div>
-                        <div class="border-2 border-amber-500 h-20 w-20 rounded flex items-center justify-center">
-                            <svg class="fill-white h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
-                        </div>
-                        <div class="border-2 border-amber-500 h-20 w-20 rounded flex items-center justify-center">
-                            <svg class="fill-white h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
-                        </div>
-                        <div class="border-2 border-amber-500 h-20 w-20 rounded flex items-center justify-center">
-                            <svg class="fill-white h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
-                        </div>
-                    </div>
-                    <div class="bg-gray-500 p-4 hidden">
-                        <!--
-                        TODO : STAR FILTER
-                        <div class="flex item-center gap-4">
-                            &lt;!&ndash;Lvl-0&ndash;&gt;
-                            <div class="flex items-center justify-center gap-4 border-2 border-amber-500 rounded w-8 h-8"><svg class="h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;!&ndash;!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"/></svg></div>
-                            &lt;!&ndash;lvl1&ndash;&gt;
-                            <div class="flex items-center justify-center px-2 gap-2 border-2 border-amber-500 rounded h-8">
-                                <svg class="h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;!&ndash;!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
-                            </div>
-                            &lt;!&ndash;lvl2&ndash;&gt;
-                            <div class="flex items-center justify-center px-2 gap-2 border-2 border-amber-500 rounded h-8">
-                                <div><svg class="h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;!&ndash;!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg></div>
-                                <div><svg class="h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;!&ndash;!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg></div>
-                            </div>
-                            &lt;!&ndash;lvl3&ndash;&gt;
-                            <div class="flex items-center justify-center px-2 gap-2 border-2 border-amber-500 rounded h-8">
-                                <div><svg class="h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;!&ndash;!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg></div>
-                                <div><svg class="h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;!&ndash;!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg></div>
-                                <div><svg class="h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;!&ndash;!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg></div>
-                            </div>
-                        </div>-->
-                        List Skills if Plus is clicked
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
 </main>
@@ -542,7 +346,8 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 <script src="./js/speedup/main.js"></script>
-<script type="module" src="./js/main.js"></script>
+
+
 
 </body>
 </html>

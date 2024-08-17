@@ -1,46 +1,6 @@
 import { dataPets } from "./pet/data-pets.js";
-let saveSpeedup = $('#save-speedup');
-if(localStorage['speedups']){
-    let storageSpeedUp = JSON.parse(localStorage['speedups']);
-    for (const [key, value] of Object.entries(storageSpeedUp)) {
-        for (const [k ,v] of Object.entries(value)) {
-            $('#'+k).val(v);
-        }
-    }
-    calcGeneric();
-    calcTech();
-    calcTrain();
-    calcBuild();
 
-}else{
-    console.log('storageSpeedUp isnt defined')
-}
 
-let arr = {
-    'generic':{},
-    'tech' : {},
-    'train' : {},
-    'build' : {}
-};
-
-saveSpeedup.click(function(){
-
-    let elems = $('.localData');
-
-    elems.each(function(i){
-
-        let elem = elems[i];
-        let idParent = $(elem).attr('id');
-        let arrInputs = $(elem).find('input');
-
-        for (let v = 0; v < arrInputs.length; v++){
-            let key = arrInputs[v].id;
-            arr[idParent][key] = arrInputs[v].value;
-        }
-    })
-    localStorage['speedups'] = JSON.stringify(arr);
-    location.reload();
-})
 
 ////////////////////////////////////////////////////
 ////////////////////// PET
@@ -89,3 +49,4 @@ $(window).scroll(function () {
     }
     $lastScrollTop = st;
 });
+

@@ -33,14 +33,45 @@ function calcTrain(){
     $('#trainResult').text(`${Math.floor(total / 24 / 60)} Days : ${Math.floor((total / 60) % 24)} Hours : ${Math.floor(total % 60)} Minutes`)
 }
 
-function calcBuild(){
-    let buildInput =  $('#build').find('input');
-    let total = 0;
-    $(buildInput).each(function(index){
-        let value = $(buildInput[index]).val();
-        let multiplier = $(buildInput[index]).data('multiplier');
+let saveSpeedup = $('#save-speedup');
 
-        total += value * multiplier;
-    })
-    $('#buildResult').text(`${Math.floor(total / 24 / 60)} Days : ${Math.floor((total / 60) % 24)} Hours : ${Math.floor(total % 60)} Minutes`)
+if(localStorage['speedups']){
+    let storageSpeedUp = JSON.parse(localStorage['speedups']);
+    for (const [key, value] of Object.entries(storageSpeedUp)) {
+        for (const [k ,v] of Object.entries(value)) {
+            $('#'+k).val(v);
+        }
+    }
+    calcGeneric();
+    calcTech();
+    calcTrain();
+
+}else{
+    console.log('storageSpeedUp isnt defined')
 }
+
+let arr = {
+    'generic':{},
+    'tech' : {},
+    'train' : {},
+    'build' : {}
+};
+
+saveSpeedup.click(function(){
+
+    let elems = $('.localData');
+
+    elems.each(function(i){
+
+        let elem = elems[i];
+        let idParent = $(elem).attr('id');
+        let arrInputs = $(elem).find('input');
+
+        for (let v = 0; v < arrInputs.length; v++){
+            let key = arrInputs[v].id;
+            arr[idParent][key] = arrInputs[v].value;
+        }
+    })
+    localStorage['speedups'] = JSON.stringify(arr);
+    location.reload();
+})
